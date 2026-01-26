@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fragments</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:fragment="sidebar">
+    <div id="bdSidebar" class="p-3 text-white offcanvas-md offcanvas-start">
+        <a th:href="@{/home}" class="navbar-brand">
+            <div class="text-center">
+                <img th:src="@{/img/hussars.jfif}" alt="13th Hussars Open Rover Scout Group" id="navLogo">
+            </div>
+        </a>
+
+        <ul class="sidebar nav nav-pills mb-auto mt-5 accordion">
+            <li class="nav-item mb-1">
+                <a th:href="@{/home}">
+                    <img th:src="@{/icon/home-2.svg}" alt="Home Icon">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item mb-1 accordion-item">
+                <a href="#" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <img th:src="@{/icon/empty-wallet-change.svg}">
+                    <span>User Management</span>
+                </a>
+                <ul id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <li class="nav-item mb-1">
+                        <a th:href="@{/admin/allUser}">
+                            <span>All Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a th:href="@{/admin/allIBUser}">
+                            <span>All IB Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a th:href="@{/admin/loggedUser}">
+                            <span>Logged Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a th:href="@{/admin/configureUser}">
+                            <span>Configure Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a th:href="@{/admin/allRoles}">
+                            <span>All Roles</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item mb-1">
+                <a th:href="@{/admin/userManagement}" class="">
+                    <img th:src="@{/icon/wallet-check.svg}">
+                    <span>User Management</span>
+                </a>
+            </li>
+
+
+        </ul>
+
+        <ul class="sidebar nav nav-pills mb-auto mt-5">
+            <li class="nav-item mb-1">
+                <form th:method="post" id="logoutForm" th:action="@{/logout}">
+                    <a style="cursor:pointer;" onclick="this.closest('form').submit();return false;" class="logout">
+
+                        <img th:src="@{/icon/logout.svg}">
+                        <span>Logout</span>
+
+                    </a>
+                </form>
+            </li>
+            <li class="nav-item mb-1">
+                <!--
+                        <div style="display: inline; float: inline-end;">Your last login time: {&nbsp}
+
+                            <span id="currentTime" style="display: inline; float: inline-end;"></span>
+                        </div>
+                        -->
+            </li>
+
+        </ul>
+        <div class="text-center fs-6 fw-lighter lh-sm copyRt footer-container">
+            <div>
+                <span><p>Copyright &copy; 2024, RBL V 1.0.0.0</p></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div th:fragment="fragment_smallNav">
+    <div class="p-2 d-md-none d-flex text-white bg-dark fixed-top">
+        <a href="#" class="text-white" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar">
+            <img th:src="@{/icon/mobile menu-2.svg}" style="height: 30px; align:center; background-color: white;">
+        </a>
+        <span class="mx-3">Rupali Bank Internet Banking</span>
+    </div>
+</div>
+<div th:fragment="admin_navbar">
+    <div class="row text-center align-items-center aboutSection">
+        <div class="col-lg-9 col-md-12 col-sm-12 mt-2 linkSection">
+            <div class="row">
+                <div class="list-group list-group-horizontal-mb list-group-horizontal-sm" id="list-tab"
+                     role="tablist">
+
+                    <a class="about-us-item list-group-item-action aboutUs" href="#">About Us</a>
+
+                    <a class="about-us-item list-group-item-action aboutUs" href="#">FAQs</a>
+
+                    <a class="about-us-item list-group-item-action aboutUs" href="#">Locate Us</a>
+
+                    <a class="about-us-item list-group-item-action aboutUs" href="#">Contact Us</a>
+
+                </div>
+                <!--<button type="button" class="btn btn-primary aboutus"
+                ><span>About</span></button>
+                <button type="button" class="btn btn-primary aboutus"
+                ><span>FAQs</span></button>
+                <button type="button" class="btn btn-primary aboutus"
+                ><span>Locate</span></button>
+                <button type="button" class="btn btn-primary aboutus"
+                ><span>Contact</span></button>-->
+                <!--<ul class="mynav nav nav-pills flex-row">
+                    <li class="nav-item mb-1">
+                        <a href="#">
+                            <img th:src="@{/icon/sms-notification.svg}"/>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a href="#" class="">
+                            <img th:src="@{/icon/notification.svg}"/>
+                        </a>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 col-sm-12 mt-2">
+            <div class="row p-0 m-0 userProfile">
+                <div class="col-9 text-end">
+                    <span class="welcome-text">Welcome!</span>
+                    <br/>
+                    <span class="client-name d-inline-block text-truncate">Admin</span>
+                </div>
+                <div class="col-3 p-0 m-0 nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        <img style="max-width:50px;" th:src="@{/img/svg-default-avater.png}" alt="Picture not available"/>
+                    </a>
+                    <ul class="topNav dropdown-menu">
+                        <li class="dropdown-item nav-item mb-1">
+                            <a href="#" class="">
+                                <img th:src="@{/icon/setting-3.svg}">
+                                <span>Profile Settings</span>
+                            </a>
+                        </li>
+                        <!--                            <li><hr class="dropdown-divider"></li>-->
+                        <!--                        <li class="dropdown-item nav-item mb-1">-->
+                        <!--                            <form action="#">-->
+                        <!--                                <a style="cursor:pointer;" onclick="this.closest('form').submit();return false;" class="logout">-->
+
+                        <!--                                    <img th:src="@{/icon/logout.svg}">-->
+                        <!--                                    <span>Logout</span>-->
+
+                        <!--                                </a>-->
+                        <!--                            </form>-->
+                        <!--                        </li>-->
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="row" th:fragment="fragment_advertisement">
+    <div class="row">
+        <div class="col-xl-8 col-lg-6 col-md-8 col-sm-12 bigAD text-center">
+            <img class="img-fluid" th:src="@{/img/bigAD.png}" alt="Big AD">
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-4 col-sm-12 smallAD text-center">
+            <img class="img-fluid" th:src="@{/img/smallAD.png}" alt="Small AD">
+        </div>
+    </div>
+</div>
+<div th:fragment="fragment_breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li th:each="breadcrumb, iterStat : ${breadcrumbs}"
+                th:classappend="${iterStat.last} ? 'breadcrumb-item active' : 'breadcrumb-item'">
+                <a class="breadcrumb-list" th:if="${!iterStat.last}" th:href="@{${breadcrumb.url}}" th:text="${breadcrumb.name}"></a>
+                <span class="breadcrumb-list active" th:if="${iterStat.last}" th:text="${breadcrumb.name}"></span>
+            </li>
+        </ul>
+    </nav>
+</div>-->
+
+<div th:fragment="admin_breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li th:each="breadcrumb, iterStat : ${breadcrumbs}"
+                th:classappend="${iterStat.last} ? 'breadcrumb-item active' : 'breadcrumb-item'">
+                <a class="breadcrumb-list" th:if="${!iterStat.last}" th:href="@{${breadcrumb.url}}" th:text="${breadcrumb.name}"></a>
+                <span class="breadcrumb-list active" th:if="${iterStat.last}" th:text="${breadcrumb.name}"></span>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div th:fragment="fragment_scroll-To-Top">
+    <div class="row scroll-to-top">
+        <button class="btn topNavigationButton btn-position btn-style" title="Go to top"><img th:src="@{/icon/arrow-up.svg}"></button>
+    </div>
+</div>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</html>
