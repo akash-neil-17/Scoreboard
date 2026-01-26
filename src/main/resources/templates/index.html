@@ -5,8 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoreboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" th:href="@{/css/all.min.css}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/img/hussars.favicon.png}"/>
+    <!-- Vuesax Icons -->
+    <link rel="stylesheet" th:href="@{/css/vuesax.min.css}">
+    <!-- External CSS -->
+    <link rel="stylesheet" th:href="@{/css/common.css}">
 </head>
 <body>
-<h1><span th:text="'Hello World!'"/></h1>
+<div id="landing-page" class="container-fluid p-0 d-flex h-100">
+    <div class="login-form">
+        <form th:action="@{/processSignIn}" method="post">
+            <div class="text-center">
+                <h4>SIGN IN</h4>
+            </div>
+
+            <div class="mb-3 floatingUsername">
+                <label for="floatingUsername" class="form-label"><b>Username</b></label>
+                <input type="text" name="userName" class="form-control" id="floatingUsername" placeholder="Enter your username">
+            </div>
+            <div class="mb-3">
+                <label for="floatingPassword" class="form-label"><b>Password</b></label>
+                <div class="input-group">
+                    <input type="password" name="userLoginPassword" class="form-control floatingPassword" id="floatingPassword" placeholder="* * * * * * * *" >
+                    <button type="button" id="passwordReveal" class="passwordReveal button">
+                        <img class="passwordIcon-hide" th:src="@{/icon/eye-slash.svg}" alt="">
+                        <img class="passwordIcon-show" th:src="@{/icon/eye.svg}" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="text-center mb-3">
+                <button class="btn btn-light signIn" type="submit">Sign In</button>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
+<!-- Bootstrap JS -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- Font Awesome JS -->
+<script th:src="@{/js/all.min.js}"></script>
+<!-- jQuery -->
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+<!-- External JavaScript -->
+<script th:src="@{/js/common.js}"></script>
+<script th:src="@{/js/disableBackButton.js}"></script>
+<script>
+    $(document).ready(function() {
+        $('.passwordIcon-show').hide();
+    });
+</script>
 </html>
