@@ -1,0 +1,30 @@
+package com.wlfscsg.GroupCamp.controller;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.stereotype.Controller;
+
+import java.io.IOException;
+
+@Controller
+@Slf4j
+public class CustomAuthSuccessHandler implements AuthenticationSuccessHandler {
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
+        AuthenticationSuccessHandler.super.onAuthenticationSuccess(request, response, chain, authentication);
+    }
+
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+        HttpSession session = request.getSession(false);
+        String role = "ROLE_ADMIN";
+        session.setAttribute("role", role);
+        response.sendRedirect(request.getContextPath()+"/");
+    }
+}

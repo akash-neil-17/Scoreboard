@@ -29,7 +29,7 @@ public class PatrolActivityPoints {
     private int activityId;
 
     @Column(name = "POINTS_EARNED")
-    private double pointsEarned;
+    private int pointsEarned;
 
     @Column(name = "COMPLETED_AT")
     private LocalDateTime completedAt;

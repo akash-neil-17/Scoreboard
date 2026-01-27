@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class ActivitySaveRequestDTO {
 
     private String activityName;
-    private double point;
+    private int point;
 
 }

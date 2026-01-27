@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Banking Back Office</title>
+    <title>Scoreboard</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <!-- Font Awesome -->
@@ -17,7 +16,6 @@
     <!-- External CSS -->
     <link rel="stylesheet" th:href="@{/css/dashboard.css}">
 </head>
-
 <body>
 <!--Navbar Starts-->
 <div class="row text-center align-items-center navSection">
@@ -33,11 +31,11 @@
             <div class="list-group list-group-horizontal-mb list-group-horizontal-sm" id="list-tab"
                  role="tablist">
 
-                <a class="about-us-item list-group-item-action aboutUs isActiveNav" th:href="@{/dashboard}">Home</a>
+                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/dashboard}">Home</a>
 
                 <a class="about-us-item list-group-item-action aboutUs" th:href="@{/patrol}">Patrol Management</a>
 
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/activity}">Activity Management</a>
+                <a class="about-us-item list-group-item-action aboutUs isActiveNav" th:href="@{/activity}">Activity Management</a>
 
                 <a class="about-us-item list-group-item-action aboutUs" th:href="@{/point}">Point Management</a>
 
@@ -60,58 +58,49 @@
     </div>
 </div>
 <!--Navbar Ends-->
-<!--Card-->
-<div class="row justify-content-center">
-    <div class="col-3">
-        <div class="card cd-dash">
-            <a href="#" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/profile-2user.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Total Participants'"/>
-                    <div class="mt-3">
-                        <p class="cd-bigText" id="totalParticipants"></p>
-                    </div>
-                </div>
-            </a>
-        </div>
+<div class="container">
+    <div class="heading">
+        <h3>Add Activity</h3>
     </div>
-    <div class="col-3">
-        <div class="card cd-dash">
-            <a href="#" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/profile-2user.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Total Patrol'"/>
-                    <div class="mt-3">
-                        <p class="cd-bigText" id="totalPatrol"></p>
+    <div class="view form justify-content-center">
+
+        <form id="addActivity" th:action="@{/activity/save}" th:object="${ACTIVITY}" method="post">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mb-3">
+                        <label for="activityName" class="form-label">Activity Name</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="activityName" th:field="*{activityName}">
+                        </div>
+                        <div class="mb-3 text-danger validation-text"
+                             th:if="${#fields.hasErrors('activityName')}">
+                            <p th:each="err : ${#fields.errors('activityName')}"
+                               th:text="${err}"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="activityPoint" class="form-label">Activity Point</label>
+                        <div class="input-group">
+                            <input type="number" step="1" min="0" class="form-control" id="activityPoint" th:field="*{point}">
+                        </div>
+                        <div class="mb-3 text-danger validation-text"
+                             th:if="${#fields.hasErrors('point')}">
+                            <p th:each="err : ${#fields.errors('point')}"
+                               th:text="${err}"/>
+                        </div>
                     </div>
                 </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-3">
-        <div class="card cd-dash">
-            <a href="#" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Total Activities'"/>
-                    <div class="mt-3">
-                        <p class="cd-bigText" id="totalActivities"></p>
-                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="button" class="button back-button btn btn-info"><a th:href="@{/activity}" class="text-decoration-none link-dark" >Back </a></button>
+                    <button type="submit" id="addActivitySubmit" class="button next-button btn btn-success" >Submit</button>
                 </div>
-            </a>
-        </div>
+            </div>
+        </form>
+
     </div>
 </div>
 </body>
-
-<!-- Bootstrap JS -->
-<script th:src="@{/js/bootstrap.min.js}"></script>
-<!--<script th:src="@{/js/bootstrap.bundle.min.js}"></script>-->
-<!-- jQuery -->
-<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
-<!-- External JavaScript -->
-<script th:src="@{/js/common.js}"></script>
-<!--<script th:src="@{/js/disableBackButton.js}"></script>-->
-<!--<script th:src="@{/js/disable_devtool.js}" md5="e77989ed21758e78331b20e477fc5582"></script>-->
-
 </html>

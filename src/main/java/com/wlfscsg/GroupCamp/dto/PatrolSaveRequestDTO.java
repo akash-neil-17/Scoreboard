@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PatrolSaveRequestDTO {
 
+    private int patrolUnit;
     private String patrolName;
 
 }

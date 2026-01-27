@@ -8,8 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DashboardController {
 
     @GetMapping("/dashboard")
-    public String home (){
-        return "dashboard.html";
+    public String dashboard (){
+        return "dashboard";
+    }
+
+    @GetMapping("/patrol")
+    public String patrol (){
+        return "patrolManagement";
+    }
+
+    @GetMapping("/activity")
+    public String activity (){
+        return "activityManagement";
+    }
+
+    @GetMapping("/point")
+    public String point (){
+        return "pointManagement";
     }
 
 }

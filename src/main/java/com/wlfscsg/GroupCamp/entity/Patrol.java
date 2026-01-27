@@ -1,12 +1,7 @@
 package com.wlfscsg.GroupCamp.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "patrol_list")
@@ -16,11 +11,12 @@ import lombok.NoArgsConstructor;
 public class Patrol {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PATROL_ID")
     private Integer patrolId;
 
     @Column(name = "PATROL_UNIT")
-    private Integer patrolUnit;
+    private int patrolUnit;
 
     @Column(name = "PATROL_NAME")
     private String patrolName;

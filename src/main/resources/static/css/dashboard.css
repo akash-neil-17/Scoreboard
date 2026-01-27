@@ -1,0 +1,148 @@
+body{
+    /*background-color: #FCBB12;*/
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+.navSection{
+    margin-bottom: 5rem;
+}
+.card-style{
+    background-color: rgba(46, 139, 87, 0.05);
+    padding: 22px 0 22px 0;
+    /*border-radius: 10px;*/
+    gap: 8px;
+    max-width: 700px;
+    min-width: 200px;
+    height: 150px;
+    border:none;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+.cd-dash {
+    border-radius: 10px;
+    background: rgba(46, 139, 87, 0.05);
+    max-width: 800px;
+    height: 150px;
+    border:none;
+    overflow: hidden;
+}
+.cd-smallText {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: center;
+}
+.cd-bigText {
+    font-size: 22px;
+    font-weight: 600;
+    /*line-height: 42px;*/
+    letter-spacing: 0;
+    text-align: center;
+    width: 100%;
+}
+.aboutUs {
+    background-color: rgba(46, 157, 220, 0.05);
+    border: none;
+    color: black;
+    text-decoration: none;
+    /*padding-left: 0px;*/
+    /*padding-right: 0px;*/
+}
+.aboutUs:hover{
+    background: #FFF;
+}
+.aboutUs:active{
+    --bs-btn-active-bg: rgb(0,0,0,0.2);
+}
+
+.about-us-item {
+    padding: 16px 30px 16px 30px;
+    gap: 20px;
+    border-radius: 6px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal
+}
+.about-us-item .active {
+    padding: 16px 30px 16px 30px;
+    gap: 20px;
+    border-radius: 6px;
+    background: #2E8B57;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #FFF;
+}
+.list-group-item {
+    padding: 16px 30px 16px 30px;
+    gap: 20px;
+    border-radius: 6px;
+    background: #FFF;
+    border: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #2E8B57;
+}
+.list-group-item .active {
+    padding: 16px 30px 16px 30px;
+    gap: 20px;
+    border-radius: 6px;
+    background: #2E8B57;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #FFF;
+}
+.userProfile{
+    border-radius: 6px;
+    vertical-align: middle;
+    align-items: center;
+    background: #FFF;
+}
+
+.welcome-text{
+    color: #E0E0E0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.client-name{
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    max-width: 155px;
+}
+.isActiveNav{
+    color: #1d49a6;
+    font-weight: bolder;
+}
+.view{
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    padding: 15px;
+    border-radius: 10px;
+    width: 35%;
+    color: black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: large;
+    box-shadow: 10px 1px 19px 3px rgba(113,107,107,0.59);
+    -webkit-box-shadow: 10px 1px 19px 3px rgba(113,107,107,0.59);
+    -moz-box-shadow: 10px 1px 19px 3px rgba(113,107,107,0.59);
+}
+.heading{
+    margin: auto;
+    width: 35%;
+}

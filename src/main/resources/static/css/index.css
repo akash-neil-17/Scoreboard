@@ -3,7 +3,6 @@ body{
     background-color: #FEB272;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 #landing-page{
     background-image: url("../img/banner1.png");
     min-height: 100vh;
