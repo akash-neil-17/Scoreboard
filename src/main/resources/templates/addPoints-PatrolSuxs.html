@@ -26,7 +26,7 @@
             </div>
         </a>
     </div>
-    <div class="col-lg-9 col-md-12 col-sm-12 mt-2 linkSection">
+    <div class="col-lg-8 col-md-12 col-sm-12 mt-2 linkSection">
         <div class="row">
             <div class="list-group list-group-horizontal-mb list-group-horizontal-sm" id="list-tab"
                  role="tablist">
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-2 col-md-12 col-sm-12 mt-2">
+    <div class="col-lg-3 col-md-12 col-sm-12 mt-2">
         <div class="row p-0 m-0 userProfile">
             <div class="col-9 text-end">
                 <span class="welcome-text">Welcome!</span>
@@ -58,47 +58,12 @@
     </div>
 </div>
 <!--Navbar Ends-->
-<!--Card-->
-<div class="row">
-    <div class="col-lg-3 col-sm-12">
-        <div class="card card-style">
-            <a th:href="@{/point/individual/add}" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Add Points - Individual'"/>
-                </div>
-            </a>
-        </div>
+<div class="container text-center">
+    <div class="text-success m-5">
+        <h2>Point has been added successfully!</h2>
     </div>
-    <div class="col-lg-3 col-sm-12">
-        <div class="card card-style">
-            <a th:href="@{/point/patrol/add}" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Add Points - Patrol'"/>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-12">
-        <div class="card card-style">
-            <a th:href="@{/point/individual/scoreboard}" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Scoreboard - Individual'"/>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-12">
-        <div class="card card-style">
-            <a th:href="@{/point/patrol/scoreboard}" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Scoreboard - Patrol'"/>
-                </div>
-            </a>
-        </div>
+    <div class="m-5">
+        <a th:href="@{/point/patrol/add}"><button class="btn btn-success">Go Back</button></a>
     </div>
 </div>
 </body>

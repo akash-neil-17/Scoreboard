@@ -70,7 +70,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests( configurer -> {
                     configurer.requestMatchers("/css/**","/icon/**","/img/**","/js/**","/font/**").permitAll();
-                    configurer.requestMatchers("/","/home", "/dashboard","/patrol", "/activity","/point", "/patrol/**", "/activity/**", "/point/**","/admin/**").hasRole("ADMIN");
+                    configurer.requestMatchers("/","/home", "/dashboard","/patrol", "/activity","/point", "/patrol/**", "/activity/**", "/point/**","/admin/**", "/rest/**").hasRole("ADMIN");
                     configurer.anyRequest().authenticated();
                 })
                 .formLogin(form -> form
@@ -85,7 +85,7 @@ public class SecurityConfig {
                                 .permitAll()
                 )
                 .logout(logout -> logout
-                        .deleteCookies("IB_ADMIN_SESSION")
+                        .deleteCookies("JSESSIONID")
                         .invalidateHttpSession(true)
                         .logoutSuccessHandler(new LogoutSuccessHandler() {
                             @Override
