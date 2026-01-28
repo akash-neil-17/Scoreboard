@@ -1,6 +1,7 @@
 body{
     /*background-color: #FCBB12;*/
-    background-color: #FEB272;
+    /*background-color: #FEB272;*/
+    background-color: #756F2D;
     font-family: Arial, Helvetica, sans-serif;
 }
 #landing-page{
@@ -10,7 +11,7 @@ body{
     /*overflow: hidden;*/
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
     justify-content: center;
     align-items: center;
 }
