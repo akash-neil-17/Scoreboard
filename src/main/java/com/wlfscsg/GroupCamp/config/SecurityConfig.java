@@ -70,7 +70,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests( configurer -> {
                     configurer.requestMatchers("/css/**","/icon/**","/img/**","/js/**","/font/**").permitAll();
-                    configurer.requestMatchers("/","/home", "/dashboard","/patrol", "/activity","/point", "/patrol/**", "/activity/**", "/point/**","/admin/**", "/rest/**").hasRole("ADMIN");
+                    configurer.requestMatchers("/","/home", "/dashboard","/patrol", "/activity","/point","/individual", "/patrol/**", "/activity/**", "/point/**","/individual/**", "/rest/**").hasRole("ADMIN");
                     configurer.anyRequest().authenticated();
                 })
                 .formLogin(form -> form

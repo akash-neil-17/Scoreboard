@@ -27,34 +27,17 @@
         <!--Navbar Ends-->
         <div class="container">
             <div class="heading">
-                <h3>Activity Point - Patrol</h3>
+                <h3>Add Participant</h3>
             </div>
             <div class="view form justify-content-center">
 
-                <form id="addActivity" th:action="@{/point/patrol/save}" th:object="${PATROLACTIVITY}" method="post">
+                <form id="addActivity" th:action="@{/individual/save}" th:object="${INDIVIDUAL}" method="post">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="mb-3">
-                                <label for="patrolName" class="form-label">Select Patrol Name</label>
+                                <label for="activityName" class="form-label">Activity Name</label>
                                 <div class="input-group">
-                                    <select class="form-select" id="patrolName" th:field="*{patrolName}">
-                                        <option value="default">Select</option>
-                                        <option th:each="patrol : *{patrolList}" th:value="${patrol}"  th:text="${patrol}"></option>
-                                    </select>
-                                </div>
-                                <div class="mb-3 text-danger validation-text"
-                                     th:if="${#fields.hasErrors('patrolName')}">
-                                    <p th:each="err : ${#fields.errors('patrolName')}"
-                                       th:text="${err}"/>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="activityName" class="form-label">Select Activity Name</label>
-                                <div class="input-group">
-                                    <select class="form-select" id="activityName" th:field="*{activityName}">
-                                        <option value="default">Select</option>
-                                        <option th:each="activity : *{activityList}" th:value="${activity}"  th:text="${activity}"></option>
-                                    </select>
+                                    <input type="text" class="form-control" id="activityName" th:field="*{activityName}">
                                 </div>
                                 <div class="mb-3 text-danger validation-text"
                                      th:if="${#fields.hasErrors('activityName')}">
@@ -65,11 +48,11 @@
                             <div class="mb-3">
                                 <label for="activityPoint" class="form-label">Activity Point</label>
                                 <div class="input-group">
-                                    <input type="number" step="1" class="form-control" id="activityPoint" th:field="*{earnedPoint}">
+                                    <input type="number" step="1" min="0" class="form-control" id="activityPoint" th:field="*{point}">
                                 </div>
                                 <div class="mb-3 text-danger validation-text"
-                                     th:if="${#fields.hasErrors('earnedPoint')}">
-                                    <p th:each="err : ${#fields.errors('earnedPoint')}"
+                                     th:if="${#fields.hasErrors('point')}">
+                                    <p th:each="err : ${#fields.errors('point')}"
                                        th:text="${err}"/>
                                 </div>
                             </div>
@@ -78,8 +61,8 @@
 
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button type="button" class="button back-button btn btn-info"><a th:href="@{/point}" class="text-decoration-none link-dark" >Back </a></button>
-                            <button type="submit" id="addPointPatrolSubmit" class="button next-button btn btn-success" >Submit</button>
+                            <button type="button" class="button back-button btn btn-info"><a th:href="@{/activity}" class="text-decoration-none link-dark" >Back </a></button>
+                            <button type="submit" id="addActivitySubmit" class="button next-button btn btn-success" >Submit</button>
                         </div>
                     </div>
                 </form>

@@ -42,8 +42,8 @@ public class ActivityController {
         if (requestDTO.getActivityName().isEmpty()){
             result.rejectValue("activityName", "error.code", "Activity Name cannot be empty");
         }
-        if (requestDTO.getPoint()<0){
-            result.rejectValue("point", "error.code", "Point cannot be negative");
+        if (!requestDTO.getActivityName().equals("MISCONDUCT") && requestDTO.getPoint()<0){
+            result.rejectValue("point", "error.code", "Point cannot be negative except misconduct");
         }
         if (result.hasErrors()){
             model.addAttribute("ACTIVITY", requestDTO);

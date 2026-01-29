@@ -23,4 +23,7 @@ public class Activity {
     @Column(name = "ACTIVITY_POINT")
     private int point;
 
+    @Column(name = "IS_REPEATABLE")
+    private boolean isRepeatable;
+
 }

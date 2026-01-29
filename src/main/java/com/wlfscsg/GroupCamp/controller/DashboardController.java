@@ -27,4 +27,9 @@ public class DashboardController {
         return "pointManagement";
     }
 
+    @GetMapping("/individual")
+    public String individual () {
+        return "individualManagement";
+    }
+
 }

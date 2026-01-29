@@ -29,6 +29,9 @@ public class PatrolActivityPoints {
     @Column(name = "POINTS_EARNED")
     private int pointsEarned;
 
+    @Column(name = "OCCURRENCE_NO")
+    private int occurrenceNumber;
+
     @Column(name = "COMPLETED_AT")
     private LocalDateTime completedAt;
 

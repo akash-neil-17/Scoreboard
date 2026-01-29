@@ -832,3 +832,119 @@
 2026-01-29T03:28:05.467+06:00  INFO 22644 --- [GroupCamp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-01-29T03:28:05.469+06:00  INFO 22644 --- [GroupCamp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Shutdown initiated...
 2026-01-29T03:28:05.526+06:00  INFO 22644 --- [GroupCamp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Shutdown completed.
+2026-01-29T12:42:18.238+06:00  INFO 14904 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : Starting GroupCampApplication using Java 17.0.8 with PID 14904 (D:\Akash\Scoreboard\target\classes started by chakraborty.akash in D:\Akash\Scoreboard)
+2026-01-29T12:42:18.240+06:00  INFO 14904 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-01-29T12:42:18.846+06:00  INFO 14904 --- [GroupCamp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-29T12:42:18.903+06:00  INFO 14904 --- [GroupCamp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2026-01-29T12:42:19.535+06:00  INFO 14904 --- [GroupCamp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-29T12:42:19.547+06:00  INFO 14904 --- [GroupCamp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-29T12:42:19.547+06:00  INFO 14904 --- [GroupCamp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-29T12:42:19.604+06:00  INFO 14904 --- [GroupCamp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-29T12:42:19.605+06:00  INFO 14904 --- [GroupCamp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1333 ms
+2026-01-29T12:42:19.745+06:00  INFO 14904 --- [GroupCamp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-29T12:42:19.803+06:00  INFO 14904 --- [GroupCamp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.41.Final
+2026-01-29T12:42:19.835+06:00  INFO 14904 --- [GroupCamp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-29T12:42:20.097+06:00  INFO 14904 --- [GroupCamp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-29T12:42:20.124+06:00  INFO 14904 --- [GroupCamp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Starting...
+2026-01-29T12:42:23.775+06:00  INFO 14904 --- [GroupCamp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool_SCOREBOARD - Added connection com.mysql.cj.jdbc.ConnectionImpl@49d543a9
+2026-01-29T12:42:23.777+06:00  INFO 14904 --- [GroupCamp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Start completed.
+2026-01-29T12:42:24.465+06:00  INFO 14904 --- [GroupCamp] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool_SCOREBOARD)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-29T12:42:25.193+06:00  INFO 14904 --- [GroupCamp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-29T12:42:26.970+06:00  INFO 14904 --- [GroupCamp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T12:42:27.329+06:00  WARN 14904 --- [GroupCamp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-29T12:42:27.354+06:00  INFO 14904 --- [GroupCamp] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-01-29T12:42:27.406+06:00  WARN 14904 --- [GroupCamp] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Multiple @RequestMapping annotations found on public java.lang.String com.wlfscsg.GroupCamp.controller.SignInController.loginPage(org.springframework.ui.Model,jakarta.servlet.http.HttpServletRequest), but only the first will be used: [@org.springframework.web.bind.annotation.GetMapping(consumes={}, headers={}, name="", params={}, path={"/login"}, produces={}, value={"/login"}), @org.springframework.web.bind.annotation.PostMapping(consumes={}, headers={}, name="", params={}, path={"/login"}, produces={}, value={"/login"})]
+2026-01-29T12:42:27.809+06:00  INFO 14904 --- [GroupCamp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2026-01-29T12:42:28.124+06:00  INFO 14904 --- [GroupCamp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-01-29T12:42:28.132+06:00  INFO 14904 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : Started GroupCampApplication in 10.33 seconds (process running for 10.946)
+2026-01-29T12:42:39.347+06:00  INFO 14904 --- [GroupCamp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-29T12:42:39.347+06:00  INFO 14904 --- [GroupCamp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-29T12:42:39.348+06:00  INFO 14904 --- [GroupCamp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-29T13:57:10.339+06:00  INFO 14904 --- [GroupCamp] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-29T13:57:10.470+06:00  INFO 14904 --- [GroupCamp] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-01-29T13:57:10.475+06:00  INFO 14904 --- [GroupCamp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T13:57:10.477+06:00  INFO 14904 --- [GroupCamp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Shutdown initiated...
+2026-01-29T13:57:10.533+06:00  INFO 14904 --- [GroupCamp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Shutdown completed.
+2026-01-29T13:57:15.196+06:00  INFO 21664 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : Starting GroupCampApplication using Java 17.0.8 with PID 21664 (D:\Akash\Scoreboard\target\classes started by chakraborty.akash in D:\Akash\Scoreboard)
+2026-01-29T13:57:15.199+06:00  INFO 21664 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-01-29T13:57:15.790+06:00  INFO 21664 --- [GroupCamp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-29T13:57:15.844+06:00  INFO 21664 --- [GroupCamp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2026-01-29T13:57:16.269+06:00  INFO 21664 --- [GroupCamp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-29T13:57:16.279+06:00  INFO 21664 --- [GroupCamp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-29T13:57:16.279+06:00  INFO 21664 --- [GroupCamp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-29T13:57:16.331+06:00  INFO 21664 --- [GroupCamp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-29T13:57:16.332+06:00  INFO 21664 --- [GroupCamp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1093 ms
+2026-01-29T13:57:16.466+06:00  INFO 21664 --- [GroupCamp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-29T13:57:16.527+06:00  INFO 21664 --- [GroupCamp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.41.Final
+2026-01-29T13:57:16.561+06:00  INFO 21664 --- [GroupCamp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-29T13:57:16.822+06:00  INFO 21664 --- [GroupCamp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-29T13:57:16.850+06:00  INFO 21664 --- [GroupCamp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Starting...
+2026-01-29T13:57:20.208+06:00  INFO 21664 --- [GroupCamp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool_SCOREBOARD - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a54c92e
+2026-01-29T13:57:20.210+06:00  INFO 21664 --- [GroupCamp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Start completed.
+2026-01-29T13:57:20.881+06:00  INFO 21664 --- [GroupCamp] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool_SCOREBOARD)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-29T13:57:21.607+06:00  INFO 21664 --- [GroupCamp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-29T13:57:23.414+06:00  INFO 21664 --- [GroupCamp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T13:57:23.681+06:00  INFO 21664 --- [GroupCamp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-29T13:57:23.754+06:00  WARN 21664 --- [GroupCamp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-29T13:57:23.776+06:00  INFO 21664 --- [GroupCamp] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-01-29T13:57:23.823+06:00  WARN 21664 --- [GroupCamp] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Multiple @RequestMapping annotations found on public java.lang.String com.wlfscsg.GroupCamp.controller.SignInController.loginPage(org.springframework.ui.Model,jakarta.servlet.http.HttpServletRequest), but only the first will be used: [@org.springframework.web.bind.annotation.GetMapping(consumes={}, headers={}, name="", params={}, path={"/login"}, produces={}, value={"/login"}), @org.springframework.web.bind.annotation.PostMapping(consumes={}, headers={}, name="", params={}, path={"/login"}, produces={}, value={"/login"})]
+2026-01-29T13:57:24.221+06:00  INFO 21664 --- [GroupCamp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2026-01-29T13:57:24.533+06:00  INFO 21664 --- [GroupCamp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-01-29T13:57:24.541+06:00  INFO 21664 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : Started GroupCampApplication in 9.776 seconds (process running for 10.338)
+2026-01-29T14:00:56.987+06:00  INFO 21664 --- [GroupCamp] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-29T14:00:57.126+06:00  INFO 21664 --- [GroupCamp] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-01-29T14:00:57.130+06:00  INFO 21664 --- [GroupCamp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T14:00:57.132+06:00  INFO 21664 --- [GroupCamp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Shutdown initiated...
+2026-01-29T14:00:57.188+06:00  INFO 21664 --- [GroupCamp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Shutdown completed.
+2026-01-29T14:01:00.485+06:00  INFO 18648 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : Starting GroupCampApplication using Java 17.0.8 with PID 18648 (D:\Akash\Scoreboard\target\classes started by chakraborty.akash in D:\Akash\Scoreboard)
+2026-01-29T14:01:00.487+06:00  INFO 18648 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-01-29T14:01:01.029+06:00  INFO 18648 --- [GroupCamp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-29T14:01:01.082+06:00  INFO 18648 --- [GroupCamp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2026-01-29T14:01:01.489+06:00  INFO 18648 --- [GroupCamp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-29T14:01:01.499+06:00  INFO 18648 --- [GroupCamp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-29T14:01:01.500+06:00  INFO 18648 --- [GroupCamp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-29T14:01:01.542+06:00  INFO 18648 --- [GroupCamp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-29T14:01:01.543+06:00  INFO 18648 --- [GroupCamp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1022 ms
+2026-01-29T14:01:01.688+06:00  INFO 18648 --- [GroupCamp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-29T14:01:01.730+06:00  INFO 18648 --- [GroupCamp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.41.Final
+2026-01-29T14:01:01.756+06:00  INFO 18648 --- [GroupCamp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-29T14:01:01.973+06:00  INFO 18648 --- [GroupCamp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-29T14:01:01.997+06:00  INFO 18648 --- [GroupCamp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Starting...
+2026-01-29T14:01:05.128+06:00  INFO 18648 --- [GroupCamp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool_SCOREBOARD - Added connection com.mysql.cj.jdbc.ConnectionImpl@762da62b
+2026-01-29T14:01:05.130+06:00  INFO 18648 --- [GroupCamp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Start completed.
+2026-01-29T14:01:05.780+06:00  INFO 18648 --- [GroupCamp] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool_SCOREBOARD)']
+	Database driver: undefined/unknown
+	Database version: 9.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-29T14:01:06.440+06:00  INFO 18648 --- [GroupCamp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-29T14:01:07.669+06:00  INFO 18648 --- [GroupCamp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T14:01:07.921+06:00  INFO 18648 --- [GroupCamp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-29T14:01:07.992+06:00  WARN 18648 --- [GroupCamp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-29T14:01:08.012+06:00  INFO 18648 --- [GroupCamp] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-01-29T14:01:08.058+06:00  WARN 18648 --- [GroupCamp] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Multiple @RequestMapping annotations found on public java.lang.String com.wlfscsg.GroupCamp.controller.SignInController.loginPage(org.springframework.ui.Model,jakarta.servlet.http.HttpServletRequest), but only the first will be used: [@org.springframework.web.bind.annotation.GetMapping(consumes={}, headers={}, name="", params={}, path={"/login"}, produces={}, value={"/login"}), @org.springframework.web.bind.annotation.PostMapping(consumes={}, headers={}, name="", params={}, path={"/login"}, produces={}, value={"/login"})]
+2026-01-29T14:01:08.453+06:00  INFO 18648 --- [GroupCamp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2026-01-29T14:01:08.743+06:00  INFO 18648 --- [GroupCamp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-01-29T14:01:08.751+06:00  INFO 18648 --- [GroupCamp] [main] c.w.GroupCamp.GroupCampApplication       : Started GroupCampApplication in 8.673 seconds (process running for 9.15)
+2026-01-29T14:01:33.690+06:00  INFO 18648 --- [GroupCamp] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-29T14:01:33.827+06:00  INFO 18648 --- [GroupCamp] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-01-29T14:01:33.830+06:00  INFO 18648 --- [GroupCamp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T14:01:33.832+06:00  INFO 18648 --- [GroupCamp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Shutdown initiated...
+2026-01-29T14:01:33.897+06:00  INFO 18648 --- [GroupCamp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool_SCOREBOARD - Shutdown completed.

@@ -8,7 +8,9 @@ import com.wlfscsg.GroupCamp.entity.Activity;
 import com.wlfscsg.GroupCamp.entity.Patrol;
 import com.wlfscsg.GroupCamp.entity.PatrolActivityPoints;
 import com.wlfscsg.GroupCamp.model.CommonResponse;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -43,11 +45,12 @@ public class PatrolActivityPointsServiceImplementation implements PatrolActivity
     }
 
     @Override
+    @Transactional
     public CommonResponse savePatrolPointRequest(PatrolActivityPointSaveDTO saveDTO) {
         PatrolActivityPoints patrolActivityPoints = new PatrolActivityPoints();
         Optional<Activity> optionalActivity = activityDao.findByActivityName(saveDTO.getActivityName());
         Optional<Patrol> optionalPatrol = patrolDao.findByPatrolName(saveDTO.getPatrolName());
-        if (optionalActivity.isPresent() && optionalPatrol.isPresent()) {
+        /*if (optionalActivity.isPresent() && optionalPatrol.isPresent()) {
             Optional<PatrolActivityPoints> optionalPatrolActivityPoints = patrolActivityPointsDao.findByPatrolIdAndActivityId(optionalPatrol.get().getPatrolId(), optionalActivity.get().getActivityId());
             if (optionalPatrolActivityPoints.isPresent()) {
                 return CommonResponse.ALREADY_HAS;
@@ -63,7 +66,26 @@ public class PatrolActivityPointsServiceImplementation implements PatrolActivity
                 return CommonResponse.FAIL;
             }
         }
-        return CommonResponse.SUXS;
+        return CommonResponse.SUXS;*/
+        if (optionalActivity.isPresent() && optionalPatrol.isPresent()){
+            patrolActivityPoints.setPatrolId(optionalPatrol.get().getPatrolId());
+            patrolActivityPoints.setActivityId(optionalActivity.get().getActivityId());
+            patrolActivityPoints.setPointsEarned(saveDTO.getEarnedPoint());
+            patrolActivityPoints.setCompletedAt(LocalDateTime.now());
+            if (!optionalActivity.get().isRepeatable()){
+                patrolActivityPoints.setOccurrenceNumber(1);
+            }else{
+                int nextOccurrence = patrolActivityPointsDao.findNextOccurrence(optionalPatrol.get().getPatrolId(), optionalActivity.get().getActivityId());
+                patrolActivityPoints.setOccurrenceNumber(nextOccurrence);
+            }
+            try {
+                patrolActivityPointsDao.save(patrolActivityPoints);
+                return CommonResponse.SUXS;
+            } catch (DataIntegrityViolationException e) {
+                return CommonResponse.ALREADY_HAS;
+            }
+        }
+        return CommonResponse.FAIL;
     }
 
     @Override

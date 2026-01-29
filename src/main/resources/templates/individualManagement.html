@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" th:href="@{/css/all.min.css}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.png}"/>
+    <!-- Vuesax Icons -->
+    <link rel="stylesheet" th:href="@{/css/vuesax.min.css}">
+    <!-- External CSS -->
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+<body>
+<!--Navbar Starts-->
+<div class="container-fluid p-0 d-flex h-100">
+    <!--Sidebar Starts-->
+    <div th:insert="~{fragment.html :: sidebar}"></div>
+    <!--Sidebar Ends-->
+    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+        <!--Navbar Starts-->
+        <div th:insert="~{fragment.html :: navbar}"></div>
+        <!--Navbar Ends-->
+        <!--Card-->
+        <div>
+            <h3>Participant Management</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="card card-style">
+                    <a th:href="@{/individual/add}" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/profile-2user.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'Add Participant'"/>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="card card-style">
+                    <a th:href="@{/individual/view}" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/profile-2user.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'View Participant'"/>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
