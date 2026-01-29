@@ -35,18 +35,20 @@
                 <thead>
                 <tr>
                     <th>Serial</th>
-                    <th>Activity Name</th>
-                    <th>Activity Point</th>
+                    <th>Participant Name</th>
+                    <th>Patrol Name</th>
+                    <th>Mobile Number</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:if="${session.activityList.size()==0}">
-                    <td colspan="3">No activities have been added yet</td>
+                <tr th:if="${session.participantList.size()==0}">
+                    <td colspan="4">No participants have been added yet</td>
                 </tr>
-                <tr th:each="activity : ${session.activityList}">
-                    <td th:text="${activity.getActivityId()}"></td>
-                    <td th:text="${activity.getActivityName()}"></td>
-                    <td th:text="${activity.getPoint()}"></td>
+                <tr th:each="participant : ${session.participantList}">
+                    <td th:text="${participant.getIndividualId()}"></td>
+                    <td th:text="${participant.getIndividualName()}"></td>
+                    <td th:text="${participant.getPatrolName()}"></td>
+                    <td th:text="${participant.getMobileNumber()}"></td>
                 </tr>
                 </tbody>
             </table>

@@ -31,28 +31,39 @@
             </div>
             <div class="view form justify-content-center">
 
-                <form id="addActivity" th:action="@{/individual/save}" th:object="${INDIVIDUAL}" method="post">
+                <form id="addParticipant" th:action="@{/individual/save}" th:object="${INDIVIDUAL}" method="post">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="mb-3">
-                                <label for="activityName" class="form-label">Activity Name</label>
+                                <label for="participantName" class="form-label">Participant Name</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="activityName" th:field="*{activityName}">
+                                    <input type="text" class="form-control" id="participantName" th:field="*{individualName}">
                                 </div>
                                 <div class="mb-3 text-danger validation-text"
-                                     th:if="${#fields.hasErrors('activityName')}">
-                                    <p th:each="err : ${#fields.errors('activityName')}"
+                                     th:if="${#fields.hasErrors('individualName')}">
+                                    <p th:each="err : ${#fields.errors('individualName')}"
                                        th:text="${err}"/>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="activityPoint" class="form-label">Activity Point</label>
+                                <label for="patrolName" class="form-label">Patrol Name</label>
                                 <div class="input-group">
-                                    <input type="number" step="1" min="0" class="form-control" id="activityPoint" th:field="*{point}">
+                                    <input type="text" class="form-control" id="patrolName" th:field="*{patrolName}">
                                 </div>
                                 <div class="mb-3 text-danger validation-text"
-                                     th:if="${#fields.hasErrors('point')}">
-                                    <p th:each="err : ${#fields.errors('point')}"
+                                     th:if="${#fields.hasErrors('patrolName')}">
+                                    <p th:each="err : ${#fields.errors('patrolName')}"
+                                       th:text="${err}"/>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mobileNumber" class="form-label">Mobile Number</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="mobileNumber" th:field="*{mobileNumber}">
+                                </div>
+                                <div class="mb-3 text-danger validation-text"
+                                     th:if="${#fields.hasErrors('mobileNumber')}">
+                                    <p th:each="err : ${#fields.errors('mobileNumber')}"
                                        th:text="${err}"/>
                                 </div>
                             </div>
@@ -61,8 +72,8 @@
 
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button type="button" class="button back-button btn btn-info"><a th:href="@{/activity}" class="text-decoration-none link-dark" >Back </a></button>
-                            <button type="submit" id="addActivitySubmit" class="button next-button btn btn-success" >Submit</button>
+                            <button type="button" class="button back-button btn btn-info"><a th:href="@{/individual}" class="text-decoration-none link-dark" >Back </a></button>
+                            <button type="submit" id="addParticipantSubmit" class="button next-button btn btn-success" >Submit</button>
                         </div>
                     </div>
                 </form>
