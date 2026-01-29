@@ -19,86 +19,55 @@
 </head>
 
 <body>
-<!--Navbar Starts-->
-<div class="row text-center align-items-center navSection">
-    <div class="col-lg-1">
-        <a th:href="@{/home}" class="navbar-brand">
-            <div class="text-center">
-                <img th:src="@{/img/favicon.png}" width="40" height="40" alt="13th Hussars Open Rover Scout Group" id="navLogo">
-            </div>
-        </a>
-    </div>
-    <div class="col-lg-9 col-md-12 col-sm-12 mt-2 linkSection">
+<div class="container-fluid p-0 d-flex h-100">
+    <!--Sidebar Starts-->
+    <div th:insert="~{fragment.html :: sidebar}"></div>
+    <!--Sidebar Ends-->
+    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+        <!--Navbar Starts-->
+        <div th:insert="~{fragment.html :: navbar}"></div>
+        <!--Navbar Ends-->
+        <!--Card-->
         <div class="row">
-            <div class="list-group list-group-horizontal-mb list-group-horizontal-sm" id="list-tab"
-                 role="tablist">
-
-                <a class="about-us-item list-group-item-action aboutUs isActiveNav" th:href="@{/dashboard}">Home</a>
-
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/patrol}">Patrol Management</a>
-
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/activity}">Activity Management</a>
-
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/point}">Point Management</a>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-12 col-sm-12 mt-2">
-        <div class="row p-0 m-0 userProfile">
-            <div class="col-9 text-end">
-                <span class="welcome-text">Welcome!</span>
-                <br/>
-                <span class="client-name d-inline-block text-truncate">Admin</span>
-            </div>
-            <div class="col-3 p-0 m-0 nav-item">
-                <a class="nav-link" href="#" aria-expanded="false">
-                    <img style="max-width:50px;" th:src="@{/img/svg-default-avater.png}" alt="Picture not available"/>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Navbar Ends-->
-<!--Card-->
-<div class="row justify-content-center">
-    <div class="col-3">
-        <div class="card cd-dash">
-            <a href="#" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/profile-2user.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Total Participants'"/>
-                    <div class="mt-3">
-                        <p class="cd-bigText" id="totalParticipants"></p>
-                    </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="card cd-dash">
+                    <a href="#" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/profile-2user.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'Total Participants'"/>
+                            <div class="mt-3">
+                                <p class="cd-bigText" id="totalParticipants"></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-3">
-        <div class="card cd-dash">
-            <a href="#" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/profile-2user.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Total Patrol'"/>
-                    <div class="mt-3">
-                        <p class="cd-bigText" id="totalPatrol"></p>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="card cd-dash">
+                    <a href="#" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/profile-2user.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'Total Patrol'"/>
+                            <div class="mt-3">
+                                <p class="cd-bigText" id="totalPatrol" th:text="${session.totalPatrol}"></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-3">
-        <div class="card cd-dash">
-            <a href="#" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Total Activities'"/>
-                    <div class="mt-3">
-                        <p class="cd-bigText" id="totalActivities"></p>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="card cd-dash">
+                    <a href="#" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'Total Activities'"/>
+                            <div class="mt-3">
+                                <p class="cd-bigText" id="totalActivities" th:text="${session.totalActivity}"></p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </div>
@@ -111,7 +80,6 @@
 <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
 <!-- External JavaScript -->
 <script th:src="@{/js/common.js}"></script>
-<!--<script th:src="@{/js/disableBackButton.js}"></script>-->
 <!--<script th:src="@{/js/disable_devtool.js}" md5="e77989ed21758e78331b20e477fc5582"></script>-->
 
 </html>

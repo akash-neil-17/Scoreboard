@@ -5,12 +5,16 @@ body{
     overflow-x: hidden;
 }
 .navSection{
-    margin-bottom: 5rem;
+    /*margin-bottom: 5rem;*/
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
 }
 .card-style{
     background-color: rgba(46, 139, 87, 0.05);
     padding: 22px 0 22px 0;
-    /*border-radius: 10px;*/
     gap: 8px;
     max-width: 700px;
     min-width: 200px;
@@ -18,6 +22,9 @@ body{
     border:none;
     border-radius: 10px;
     margin-bottom: 12px;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
 }
 .cd-dash {
     border-radius: 10px;
@@ -26,6 +33,9 @@ body{
     height: 150px;
     border:none;
     overflow: hidden;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
 }
 .cd-smallText {
     font-size: 12px;
@@ -145,4 +155,60 @@ body{
 .heading{
     margin: auto;
     width: 35%;
+}
+#bdSidebar {
+    overflow-y: auto;
+    height: 100vh;
+    width: 280px;
+}
+#navLogo {
+    align-content: center;
+    width: 150px;
+    height: 130px;
+    left: calc(50% - 100px/2 - 641px);
+    top: calc(50% - 100px/2 - 398px);
+}
+.mynav, .topNav {
+    color: black;
+}
+.topNav li a{
+    color: black;
+    text-decoration: none;
+}
+.mynav li a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    /* display: block; */
+    border-radius: 5px;
+    padding: 8px 10px;
+    display: flex;
+    /* padding-left: 10px; */
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.mynav li a:hover, .topNav li a:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+.mynav li a i {
+    width: 25px;
+    text-align: center;
+}
+li .nav-item .active{
+    color: #2E8B57;
+}
+.copyRt {
+    color: #2E8B57 !important;
+    margin-top: 100vh;
+    text-align: center;
+    font-size: small !important;
+    font-weight: 500 !important;
+    position: fixed;
+    bottom: 0;
 }

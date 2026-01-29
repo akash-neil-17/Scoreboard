@@ -17,6 +17,15 @@
     <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
 <body>
-
+<div class="container-fluid p-0 d-flex h-100">
+    <!--Sidebar Starts-->
+    <div th:insert="~{fragment.html :: sidebar}"></div>
+    <!--Sidebar Ends-->
+    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+        <!--Navbar Starts-->
+        <div th:insert="~{fragment.html :: navbar}"></div>
+        <!--Navbar Ends-->
+    </div>
+</div>
 </body>
 </html>

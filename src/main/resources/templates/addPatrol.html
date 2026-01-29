@@ -17,98 +17,63 @@
     <link rel="stylesheet" th:href="@{/css/dashboard.css}">
 </head>
 <body>
-<!--Navbar Starts-->
-<div class="row text-center align-items-center navSection">
-    <div class="col-lg-1">
-        <a th:href="@{/home}" class="navbar-brand">
-            <div class="text-center">
-                <img th:src="@{/img/favicon.png}" width="40" height="40" alt="13th Hussars Open Rover Scout Group" id="navLogo">
+<div class="container-fluid p-0 d-flex h-100">
+    <!--Sidebar Starts-->
+    <div th:insert="~{fragment.html :: sidebar}"></div>
+    <!--Sidebar Ends-->
+    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+        <!--Navbar Starts-->
+        <div th:insert="~{fragment.html :: navbar}"></div>
+        <!--Navbar Ends-->
+        <div class="container">
+            <div class="heading">
+                <h3>Add Patrol</h3>
             </div>
-        </a>
-    </div>
-    <div class="col-lg-9 col-md-12 col-sm-12 mt-2 linkSection">
-        <div class="row">
-            <div class="list-group list-group-horizontal-mb list-group-horizontal-sm" id="list-tab"
-                 role="tablist">
+            <div class="view form justify-content-center">
+                <form id="addPatrol" th:action="@{/patrol/save}" th:object="${PATROL}" method="post">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="mb-3">
+                                <label for="unitNumber" class="form-label">Unit Number</label>
+                                <div class="input-group">
+                                    <select class="form-select" id="unitNumber" th:field="*{patrolUnit}">
+                                        <option value="0">Select</option>
+                                        <option value="1">Unit 1</option>
+                                        <option value="2">Unit 2</option>
+                                        <option value="3">Unit 3</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 text-danger validation-text"
+                                     th:if="${#fields.hasErrors('patrolUnit')}">
+                                    <p th:each="err : ${#fields.errors('patrolUnit')}"
+                                       th:text="${err}"/>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="patrolName" class="form-label">Patrol Name</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="patrolName" th:field="*{patrolName}">
+                                </div>
+                                <div class="mb-3 text-danger validation-text"
+                                     th:if="${#fields.hasErrors('patrolName')}">
+                                    <p th:each="err : ${#fields.errors('patrolName')}"
+                                       th:text="${err}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/dashboard}">Home</a>
-
-                <a class="about-us-item list-group-item-action aboutUs isActiveNav" th:href="@{/patrol}">Patrol Management</a>
-
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/activity}">Activity Management</a>
-
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/point}">Point Management</a>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button type="button" class="button back-button btn btn-info"><a th:href="@{/patrol}" class="text-decoration-none link-dark" >Back </a></button>
+                            <button type="submit" id="addPatrolSubmit" class="button next-button btn btn-success" >Submit</button>
+                        </div>
+                    </div>
+                </form>
 
             </div>
         </div>
     </div>
-    <div class="col-lg-2 col-md-12 col-sm-12 mt-2">
-        <div class="row p-0 m-0 userProfile">
-            <div class="col-9 text-end">
-                <span class="welcome-text">Welcome!</span>
-                <br/>
-                <span class="client-name d-inline-block text-truncate">Admin</span>
-            </div>
-            <div class="col-3 p-0 m-0 nav-item">
-                <a class="nav-link" href="#" aria-expanded="false">
-                    <img style="max-width:50px;" th:src="@{/img/svg-default-avater.png}" alt="Picture not available"/>
-                </a>
-            </div>
-        </div>
-    </div>
 </div>
-<!--Navbar Ends-->
-<div class="container">
-    <div class="heading">
-            <h3>Add Patrol</h3>
-    </div>
-    <div class="view form justify-content-center">
-        <form id="addPatrol" th:action="@{/patrol/save}" th:object="${PATROL}" method="post">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="mb-3">
-                        <label for="unitNumber" class="form-label">Unit Number</label>
-                        <div class="input-group">
-                            <select class="form-select" id="unitNumber" th:field="*{patrolUnit}">
-                                <option value="0">Select</option>
-                                <option value="1">Unit 1</option>
-                                <option value="2">Unit 2</option>
-                                <option value="3">Unit 3</option>
-                                <option value="4">Unit 4</option>
-                            </select>
-                        </div>
-                        <div class="mb-3 text-danger validation-text"
-                             th:if="${#fields.hasErrors('patrolUnit')}">
-                            <p th:each="err : ${#fields.errors('patrolUnit')}"
-                               th:text="${err}"/>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="patrolName" class="form-label">Patrol Name</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="patrolName" th:field="*{patrolName}">
-                        </div>
-                        <div class="mb-3 text-danger validation-text"
-                             th:if="${#fields.hasErrors('patrolName')}">
-                            <p th:each="err : ${#fields.errors('patrolName')}"
-                               th:text="${err}"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 text-center">
-                    <button type="button" class="button back-button btn btn-info"><a th:href="@{/patrol}" class="text-decoration-none link-dark" >Back </a></button>
-                    <button type="submit" id="addPatrolSubmit" class="button next-button btn btn-success" >Submit</button>
-                </div>
-            </div>
-        </form>
-
-    </div>
-</div>
-
-
-
 </body>
 </html>
