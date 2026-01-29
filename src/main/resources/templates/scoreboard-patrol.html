@@ -19,19 +19,19 @@
 <body>
 <div class="container-fluid p-0 d-flex h-100">
     <!--Sidebar Starts-->
-    <div th:insert="~{fragment.html :: sidebar}"></div>
+<!--    <div th:insert="~{fragment.html :: sidebar}"></div>-->
     <!--Sidebar Ends-->
-    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+    <div class="flex-fill main-window">
         <!--Navbar Starts-->
         <div th:insert="~{fragment.html :: navbar}"></div>
         <!--Navbar Ends-->
         <div class="container">
-            <div class="row">
+            <div class="row dark-text">
                 <h2>Bounty Points</h2>
             </div>
         </div>
         <div class="container">
-            <table id="example" class="table table-striped table-bordered dataTable display" cellspacing="0" width="100%">
+            <table id="example" class="table table-success table-striped table-hover table-responsive dataTable display" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <th>Patrol Unit</th>

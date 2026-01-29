@@ -21,17 +21,27 @@
     <!--Sidebar Starts-->
     <div th:insert="~{fragment.html :: sidebar}"></div>
     <!--Sidebar Ends-->
-    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+    <div class="flex-fill p-4 overflow-auto main-window">
         <!--Navbar Starts-->
         <div th:insert="~{fragment.html :: navbar}"></div>
         <!--Navbar Ends-->
         <div class="container text-center">
-            <div class="text-success m-5">
+            <div class="card">
+                <div class="card-header">
+                    SUCCESS
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Activity Added!</h5>
+                    <p class="card-text">You have successfully added an activity.</p>
+                    <a th:href="@{/activty}"><button class="btn btn-success">Go Back</button></a>
+                </div>
+            </div>
+            <!--<div class="text-success m-5">
                 <h2>Patrol has been added successfully!</h2>
             </div>
             <div class="m-5">
                 <a th:href="@{/dashboard}"><button class="btn btn-success">Go Back to Home</button></a>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>

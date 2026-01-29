@@ -21,16 +21,22 @@
     <!--Sidebar Starts-->
     <div th:insert="~{fragment.html :: sidebar}"></div>
     <!--Sidebar Ends-->
-    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+    <div class="flex-fill p-4 overflow-auto main-window">
         <!--Navbar Starts-->
         <div th:insert="~{fragment.html :: navbar}"></div>
         <!--Navbar Ends-->
         <div class="container text-center">
-            <div class="text-danger m-5">
-                <h2>Your request to add patrol has failed!</h2>
-            </div>
-            <div class="m-5">
-                <a th:href="@{/dashboard}"><button class="btn btn-success">Go Back to Home</button></a>
+            <div class="container text-center">
+                <div class="card">
+                    <div class="card-header text-danger">
+                        FAILED
+                    </div>
+                    <div class="card-body">
+                        <!--                    <h5 class="card-title">Participant Added!</h5>-->
+                        <p class="card-text">You have failed to add an activity.</p>
+                        <a th:href="@{/activity}"><button class="btn btn-success">Go Back</button></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

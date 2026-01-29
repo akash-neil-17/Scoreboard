@@ -21,11 +21,14 @@
     <!--Sidebar Starts-->
     <div th:insert="~{fragment.html :: sidebar}"></div>
     <!--Sidebar Ends-->
-    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+    <div class="flex-fill p-4 overflow-auto main-window">
         <!--Navbar Starts-->
         <div th:insert="~{fragment.html :: navbar}"></div>
         <!--Navbar Ends-->
         <!--Card-->
+        <div class="dark-text">
+            <h3>Point Management</h3>
+        </div>
         <div class="row">
             <div class="col-lg-3 col-sm-12">
                 <div class="card card-style">
@@ -59,7 +62,7 @@
             </div>
             <div class="col-lg-3 col-sm-12">
                 <div class="card card-style">
-                    <a th:href="@{/point/patrol/scoreboard}" type="button" class="btn">
+                    <a th:href="@{/point/patrol/scoreboard}" target="_blank" type="button" class="btn">
                         <div class="card-body">
                             <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
                             <p class="cd-smallText text-capitalize" th:text="'Scoreboard - Patrol'"/>
