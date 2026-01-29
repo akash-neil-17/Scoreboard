@@ -17,87 +17,56 @@
     <link rel="stylesheet" th:href="@{/css/dashboard.css}">
 </head>
 <body>
-<!--Navbar Starts-->
-<div class="row text-center align-items-center navSection">
-    <div class="col-lg-1">
-        <a th:href="@{/home}" class="navbar-brand">
-            <div class="text-center">
-                <img th:src="@{/img/favicon.png}" width="40" height="40" alt="13th Hussars Open Rover Scout Group" id="navLogo">
-            </div>
-        </a>
-    </div>
-    <div class="col-lg-9 col-md-12 col-sm-12 mt-2 linkSection">
+<div class="container-fluid p-0 d-flex h-100">
+    <!--Sidebar Starts-->
+    <div th:insert="~{fragment.html :: sidebar}"></div>
+    <!--Sidebar Ends-->
+    <div class="bg-light flex-fill p-4 overflow-auto main-window">
+        <!--Navbar Starts-->
+        <div th:insert="~{fragment.html :: navbar}"></div>
+        <!--Navbar Ends-->
+        <!--Card-->
         <div class="row">
-            <div class="list-group list-group-horizontal-mb list-group-horizontal-sm" id="list-tab"
-                 role="tablist">
-
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/dashboard}">Home</a>
-
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/patrol}">Patrol Management</a>
-
-                <a class="about-us-item list-group-item-action aboutUs" th:href="@{/activity}">Activity Management</a>
-
-                <a class="about-us-item list-group-item-action aboutUs isActiveNav" th:href="@{/point}">Point Management</a>
-
+            <div class="col-lg-3 col-sm-12">
+                <div class="card card-style">
+                    <a th:href="@{/point/individual/add}" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'Add Points - Individual'"/>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col-lg-2 col-md-12 col-sm-12 mt-2">
-        <div class="row p-0 m-0 userProfile">
-            <div class="col-9 text-end">
-                <span class="welcome-text">Welcome!</span>
-                <br/>
-                <span class="client-name d-inline-block text-truncate">Admin</span>
+            <div class="col-lg-3 col-sm-12">
+                <div class="card card-style">
+                    <a th:href="@{/point/patrol/add}" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'Add Points - Patrol'"/>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="col-3 p-0 m-0 nav-item">
-                <a class="nav-link" href="#" aria-expanded="false">
-                    <img style="max-width:50px;" th:src="@{/img/svg-default-avater.png}" alt="Picture not available"/>
-                </a>
+            <div class="col-lg-3 col-sm-12">
+                <div class="card card-style">
+                    <a th:href="@{/point/individual/scoreboard}" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'Scoreboard - Individual'"/>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<!--Navbar Ends-->
-<!--Card-->
-<div class="row">
-    <div class="col-lg-3 col-sm-12">
-        <div class="card card-style">
-            <a th:href="@{/point/individual/add}" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Add Points - Individual'"/>
+            <div class="col-lg-3 col-sm-12">
+                <div class="card card-style">
+                    <a th:href="@{/point/patrol/scoreboard}" type="button" class="btn">
+                        <div class="card-body">
+                            <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
+                            <p class="cd-smallText text-capitalize" th:text="'Scoreboard - Patrol'"/>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-12">
-        <div class="card card-style">
-            <a th:href="@{/point/patrol/add}" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Add Points - Patrol'"/>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-12">
-        <div class="card card-style">
-            <a th:href="@{/point/individual/scoreboard}" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Scoreboard - Individual'"/>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-12">
-        <div class="card card-style">
-            <a th:href="@{/point/patrol/scoreboard}" type="button" class="btn">
-                <div class="card-body">
-                    <img class="m-1" th:src="@{/icon/activity.svg}" alt="">
-                    <p class="cd-smallText text-capitalize" th:text="'Scoreboard - Patrol'"/>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
 </div>
